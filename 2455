@@ -1,0 +1,13 @@
+people = 0
+max_people = 0
+
+for _ in range(4):
+    out_num, in_num = map(int, input().split())
+    
+    people = people - out_num
+    people = people + in_num
+    
+    if people > max_people:
+        max_people = people
+
+print(max_people)
