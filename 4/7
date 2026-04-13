@@ -1,0 +1,87 @@
+#백준 7785
+
+n=int(input())
+d={}
+
+for _ in range(n):
+    name,log=input().split()
+    
+    if log=="enter":
+        d[name]=1
+    else:
+        del d[name]
+
+for x in sorted(d.keys(),reverse=True):
+    print(x)
+
+
+
+
+#백준 1764
+
+n,m=map(int, input().split())
+
+a=set()
+b=set()
+
+for _ in range(n):
+    a.add(input())
+
+for _ in range(m):
+    b.add(input())
+
+result=sorted(a & b)
+
+print(len(result))
+for name in result:
+    print(name)
+
+
+
+
+백준 1302
+
+n=int(input())
+
+books={}
+
+for _ in range(n):
+    name=input()
+    
+    if name in books:
+        books[name]+=1
+    else:
+        books[name]=1
+
+max_count = max(books.values())
+
+result = []
+
+for name in books:
+    if books[name]==max_count:
+        result.append(name)
+
+result.sort()
+
+print(result[0])
+
+
+
+백준 13414
+
+k,l=map(int,input().split())
+
+students={}
+
+for i in range(l):
+    student= input()
+    students[student]= i
+
+sorted_students = sorted(students.items(), key=lambda x: x[1])
+
+count=0
+for student, _ in sorted_students:
+    if count==k:
+        break
+    print(student)
+    count+= 1
